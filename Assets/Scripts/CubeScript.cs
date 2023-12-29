@@ -2,8 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// INHERITANCE
 public class CubeScript : ShapeScript
 {
+    //ENCAPSULATION
     public string CubeName {  get; protected set; }
     public float _verticalOffset = 0.75f;
 
@@ -12,6 +14,8 @@ public class CubeScript : ShapeScript
         verticalOffset = _verticalOffset;
         CubeName = name;
     }
+
+    // POLYMORPHISM
     protected override string DisplayText()
     {
         if (!string.IsNullOrEmpty(NameField.text))

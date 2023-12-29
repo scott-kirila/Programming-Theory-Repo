@@ -2,8 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// INHERITANCE
 public class SphereScript : ShapeScript
 {
+    //ENCAPSULATION
     public string SphereName { get; protected set; }
     public float _verticalOffset = 1.0f;
     private void Start()
@@ -11,6 +13,8 @@ public class SphereScript : ShapeScript
         verticalOffset = _verticalOffset;
         SphereName = name;
     }
+
+    // POLYMORPHISM
     protected override string DisplayText()
     {
         string displayName;
