@@ -37,7 +37,7 @@ public abstract class ShapeScript : MonoBehaviour
 
             if (Physics.Raycast(ray, out RaycastHit hit))
             {
-                if (hit.transform.name == name)
+                if (hit.transform.name == name && transform.childCount == 0)
                 {
                     Vector3 direction = transform.position - m_Camera.transform.position;
                     Quaternion rotation = Quaternion.LookRotation(direction);
