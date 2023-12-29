@@ -5,6 +5,7 @@ using System.Runtime.CompilerServices;
 using TMPro;
 using UnityEngine;
 
+// INHERITANCE
 public abstract class ShapeScript : MonoBehaviour
 {
     public TMP_InputField NameField;
@@ -26,8 +27,10 @@ public abstract class ShapeScript : MonoBehaviour
         }
     }
 
+    // POLYMORPHISM
     protected abstract string DisplayText();
 
+    // ABSTRACTION
     protected bool DetectClick()
     {
         if (Input.GetMouseButtonDown(0))
