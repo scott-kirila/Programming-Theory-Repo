@@ -358,6 +358,7 @@
 "Assets/Scripts/CubeScript.cs"
 "Assets/Scripts/CylinderScript.cs"
 "Assets/Scripts/FloatingTextScript.cs"
+"Assets/Scripts/NameScript.cs"
 "Assets/Scripts/ShapeScript.cs"
 "Assets/Scripts/SphereScript.cs"
 -langversion:9.0

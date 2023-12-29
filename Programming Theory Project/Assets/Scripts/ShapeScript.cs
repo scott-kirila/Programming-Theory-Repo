@@ -7,6 +7,7 @@ using UnityEngine;
 
 public abstract class ShapeScript : MonoBehaviour
 {
+    public TMP_InputField NameField;
     public GameObject floatingTextPrefab;
     protected float verticalOffset;
     Camera m_Camera;
@@ -14,6 +15,7 @@ public abstract class ShapeScript : MonoBehaviour
     private void Awake()
     {
         m_Camera = Camera.main;
+        NameField = GameObject.Find("NameField").GetComponent<TMP_InputField>();
     }
 
     private void Update()
@@ -24,7 +26,7 @@ public abstract class ShapeScript : MonoBehaviour
         }
     }
 
-    protected abstract void DisplayText();
+    protected abstract string DisplayText();
 
     protected bool DetectClick()
     {
@@ -41,12 +43,10 @@ public abstract class ShapeScript : MonoBehaviour
                     Quaternion rotation = Quaternion.LookRotation(direction);
                     
                     var floatingText = Instantiate(floatingTextPrefab, transform.position, rotation, transform);
-                    
-                    floatingText.GetComponent<TMP_Text>().text = name;
+
+                    floatingText.GetComponent<TMP_Text>().text = DisplayText(); // name;
                     floatingText.transform.localPosition = Vector3.up * verticalOffset;
                     
-                    Debug.Log($"You clicked {name}!");
-
                     return true;
                 }
             }
